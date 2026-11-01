@@ -28,6 +28,7 @@ export const env = {
   dbPassword: process.env.DB_PASSWORD || "",
   dbName: process.env.DB_NAME,
   dbSsl: process.env.DB_SSL === "true",
+  dbCaPath: process.env.DB_CA_PATH || "",
   jwtSecret: process.env.JWT_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "1d",
   clientUrls: (process.env.CLIENT_URL || "").split(",").map((url) => url.trim()).filter(Boolean),

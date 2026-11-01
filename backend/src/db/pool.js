@@ -10,7 +10,8 @@ const currentDir = path.dirname(fileURLToPath(import.meta.url));
 const sslConfig = env.dbSsl
   ? {
       ca: fs.readFileSync(
-        path.resolve(currentDir, "../../certs/ca.pem"),
+        env.dbCaPath ||
+          path.resolve(currentDir, "../../certs/ca.pem"),
         "utf8"
       ),
       rejectUnauthorized: true,
