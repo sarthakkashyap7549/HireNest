@@ -1,7 +1,22 @@
+
 import mysql from "mysql2/promise";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { env } from "../config/env.js";
 
-// mysql2's pool keeps database access separate from HTTP route handling.
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
+
+const sslConfig = env.dbSsl
+  ? {
+      ca: fs.readFileSync(
+        path.resolve(currentDir, "../../certs/ca.pem"),
+        "utf8"
+      ),
+      rejectUnauthorized: true,
+    }
+  : undefined;
+
 export const pool = mysql.createPool({
   host: env.dbHost,
   port: env.dbPort,
@@ -12,7 +27,7 @@ export const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   timezone: "Z",
-  ...(env.dbSsl ? { ssl: {} } : {}),
+  ...(sslConfig ? { ssl: sslConfig } : {}),
 });
 
 export async function verifyDatabaseConnection() {

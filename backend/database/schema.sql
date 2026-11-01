@@ -1,8 +1,8 @@
-CREATE DATABASE IF NOT EXISTS job_portal
+CREATE DATABASE IF NOT EXISTS defaultdb
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE job_portal;
+USE defaultdb;  
 
 CREATE TABLE IF NOT EXISTS users (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
