@@ -1,0 +1,103 @@
+:root {
+  --hn-petrol: #0f4c5c;
+  --hn-petrol-dark: #0b3a47;
+  --hn-marigold: #f2a93b;
+  --hn-mist: #f3f6f7;
+  --hn-ink: #1f2d3a;
+
+  --bs-primary: var(--hn-petrol);
+  --bs-primary-rgb: 15, 76, 92;
+  --bs-link-color: var(--hn-petrol);
+  --bs-link-color-rgb: 15, 76, 92;
+  --bs-link-hover-color: var(--hn-petrol-dark);
+  --bs-link-hover-color-rgb: 11, 58, 71;
+  --bs-body-color: var(--hn-ink);
+  --bs-body-bg: var(--hn-mist);
+  --bs-body-font-family: "Public Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bs-border-radius: 0.5rem;
+  --bs-focus-ring-color: rgba(15, 76, 92, 0.25);
+}
+
+h1, h2, h3, h4, h5, h6, .brand {
+  font-family: "Bricolage Grotesque Variable", "Public Sans Variable", system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+.display-5, .display-6 { font-weight: 700; line-height: 1.1; }
+.min-w-0 { min-width: 0; }
+
+/* ---------- Bootstrap components recoloured ---------- */
+.btn-primary {
+  --bs-btn-bg: var(--hn-petrol); --bs-btn-border-color: var(--hn-petrol);
+  --bs-btn-hover-bg: var(--hn-petrol-dark); --bs-btn-hover-border-color: var(--hn-petrol-dark);
+  --bs-btn-active-bg: var(--hn-petrol-dark); --bs-btn-active-border-color: var(--hn-petrol-dark);
+  --bs-btn-disabled-bg: var(--hn-petrol); --bs-btn-disabled-border-color: var(--hn-petrol);
+  --bs-btn-focus-shadow-rgb: 15, 76, 92;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--hn-petrol); --bs-btn-border-color: var(--hn-petrol);
+  --bs-btn-hover-bg: var(--hn-petrol); --bs-btn-hover-border-color: var(--hn-petrol);
+  --bs-btn-active-bg: var(--hn-petrol-dark); --bs-btn-active-border-color: var(--hn-petrol-dark);
+  --bs-btn-disabled-color: var(--hn-petrol); --bs-btn-disabled-border-color: var(--hn-petrol);
+  --bs-btn-focus-shadow-rgb: 15, 76, 92;
+}
+.nav-pills {
+  --bs-nav-pills-link-active-bg: var(--hn-petrol);
+  --bs-nav-link-color: var(--hn-ink);
+  --bs-nav-link-hover-color: var(--hn-petrol);
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--hn-petrol);
+  box-shadow: 0 0 0 0.2rem rgba(15, 76, 92, 0.18);
+}
+.form-control.is-invalid:focus, .form-select.is-invalid:focus { box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.2); border-color: #dc3545; }
+.form-check-input:checked { background-color: var(--hn-petrol); border-color: var(--hn-petrol); }
+.form-check-input:focus { border-color: var(--hn-petrol); box-shadow: 0 0 0 0.2rem rgba(15, 76, 92, 0.18); }
+.progress { --bs-progress-bar-bg: var(--hn-petrol); }
+.card { --bs-card-border-color: #dde5e8; }
+.navbar-nav .nav-link.active { color: var(--hn-petrol); }
+.text-bg-primary { background-color: var(--hn-petrol) !important; }
+
+/* ---------- Layout pieces ---------- */
+.brand { font-weight: 700; font-size: 1.35rem; }
+.hero { background: #fff; border-bottom: 1px solid #dde5e8; }
+.hero-search .form-control { border-color: #c9d5da; }
+
+.steps .step-num {
+  flex: 0 0 2.25rem; height: 2.25rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--hn-marigold); color: var(--hn-ink); font-weight: 700;
+}
+
+.auth-card { border: 1px solid #dde5e8; box-shadow: 0 10px 30px rgba(15, 76, 92, 0.08); }
+.auth-aside { background: var(--hn-petrol); color: #fff; }
+.auth-aside .accent { color: var(--hn-marigold); }
+
+.dash-side { top: 5rem; }
+.dash-side .nav-link { display: flex; align-items: center; }
+
+.stat-icon {
+  width: 2.75rem; height: 2.75rem; border-radius: 0.6rem; flex: 0 0 auto;
+  display: grid; place-items: center; font-size: 1.25rem;
+  background: rgba(15, 76, 92, 0.1); color: var(--hn-petrol);
+}
+
+.avatar {
+  width: 5rem; height: 5rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--hn-petrol); color: #fff;
+  font-family: "Bricolage Grotesque Variable", sans-serif; font-size: 1.75rem; font-weight: 700;
+}
+
+.job-card { transition: border-color 0.15s ease; }
+.job-card:hover { border-color: var(--hn-petrol); }
+.skill-badge { background: rgba(15, 76, 92, 0.09); color: var(--hn-petrol); font-weight: 500; }
+.clamp-3 {
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* Keep long words from breaking narrow phones */
+h1, h2, h3 { overflow-wrap: anywhere; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
